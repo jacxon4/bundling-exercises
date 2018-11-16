@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {    
+        "target": "es6",
+        "module": "es6",
+        "moduleResolution": "node",
+        "declaration": false,
+        "noImplicitAny": false,
+        "jsx": "react",
+        "sourceMap": true,
+        "noLib": false,
+        "suppressImplicitAnyIndexErrors": true
+    },
+    "parcelTsPluginOptions": { // Añadimos esto para que me muestre los errores a medida que se programa, no solo transpilar
+        "transpileOnly": false
+    },
+    "compileOnSave": false,
+    "exclude": [
+        "node_modules"  
+    ]     
+}
