@@ -2,9 +2,9 @@
 
 Implementar una aplicación simple que:
 -[X] Tenga el bundling montado con webpack.
--[ ] Muestre un logo (si queréis el de lemoncode).
+-[X] Muestre un logo (si queréis el de lemoncode).
 -[X] Este montada con typescript.
--[ ] Tenga el texto de hola mundo estilado con SASS.
+-[X] Tenga el texto de hola mundo estilado con SASS.
 
 Bonus points:
 -[ ] Muestra un hola mundo desarrollado con React.

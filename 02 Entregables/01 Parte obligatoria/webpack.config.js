@@ -1,12 +1,11 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Para evitar poner path continuamente cargamos el dirname
-var path = require('path');
-var basePath = __dirname;
+const path = require('path');
 
 module.exports = {
-    context: path.join(basePath, 'src'), // Hacemos que el path empiece en /src
+    context: path.join(__dirname, 'src'), // Hacemos que el path empiece en /src
     resolve: {
         extensions: ['.js', '.ts'] // Con esto no necesitarás que poner las extensiones de ts o js
     },
@@ -37,21 +36,26 @@ module.exports = {
                 }
             },
             {
+                test: /\.(jpeg)$/,
+                exclude: /node_modules/,
+                loader: 'url-loader?limit=5000', // Procesar imagenes usar url-loader para meterlo en el bundle /file-loader si lo queremos como imagen directa
+
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader', // Procesar ES6 o superior
 
             },
             {
-                test: /\.css$/, //Procesar css para integrarlo
-                use: [
-                    {loader: 'css-loader',}
-                ]
+                test: /\.html$/,
+                loader: 'html-loader', // Procesar html para que pueda importar imagenes (aplica para el build)
 
             },
             {
                 test: /\.scss$/, // Procesar SASS, necesario node-sass también
                 use: [ // El orden es inverso 1. sass, 2.css
+                    MiniCssExtractPlugin.loader,
                     "css-loader",
                     "sass-loader",
                 ]
@@ -63,5 +67,9 @@ module.exports = {
             filename: 'index.html', // Está en ./dist
             template: 'index.html', // Está en ./
         }),
+        new MiniCssExtractPlugin({ // Separar los ficheros de css en bloques
+            filename: "[name].css",
+            chunkFilename: "[id].css",
+        })
     ]
 };
