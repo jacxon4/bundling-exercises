@@ -7,7 +7,7 @@ Implementar una aplicación simple que:
 - [X] Tenga el texto de hola mundo estilado con SASS.
 
 Bonus points:
-- [ ] Muestra un hola mundo desarrollado con React.
+- [X] Muestra un hola mundo desarrollado con React.
 - [ ] Montar la versión de producción.
     >Pista: https://webpack.js.org/guids/production/
 - [ ] Tener variables de entorno para desarrollo o producción:
