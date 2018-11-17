@@ -7,7 +7,7 @@ interface GrettingsComponent {
     message: string;
 }
 
-export const GretingsComponent = ({message}: GrettingsComponent) => (
+export const GrettingsComponent = ({message}: GrettingsComponent) => (
     <div>
         <img src={image}/>
         <h2>Welcome to the assessment demo page of {message} student</h2>

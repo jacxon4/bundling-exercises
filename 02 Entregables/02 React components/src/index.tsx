@@ -1,10 +1,10 @@
 import * as React from 'react';
 import {render} from 'react-dom';
-import {GretingsComponent} from './components/grettingsComponent';
+import {GrettingsComponent} from './components/grettingsComponent';
 
 const myName:string = 'José Antonio Cañizares';
 
 render(
-    <GretingsComponent message={myName}/>,
+    <GrettingsComponent message={myName}/>,
     document.getElementById('root')
 );
