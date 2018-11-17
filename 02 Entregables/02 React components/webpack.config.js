@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpack = require('webpack');
 
 // Para evitar poner path continuamente cargamos el dirname
 const path = require('path');
@@ -69,6 +68,5 @@ module.exports = {
             filename: "[name].css",
             chunkFilename: "[id].css",
         }),
-        new webpack.HotModuleReplacementPlugin(),
     ]
 };
